@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  bench:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /work
+    volumes:
+      - .:/work
+      # For mutagen
+#      - docker-bench-cache:/work
+
+# For mutagen
+volumes:
+  docker-bench-cache:
+    external: true
